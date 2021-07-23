@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	section{
+		border: 3px dashed #1c87c9; 
+		height: 200px; 
+		width: 50%; 
+		margin-bottom: 20px;
+	}
+	#section1 { 
+		display: flex; 
+	} 
+	#section1 p { 
+		margin: auto; /* Important */ 
+		text-align: center; 
+	}
+	#section2 p{
+		display: table-cell;
+		height: 200px;
+		vertical-align: middle;
+	}
+	#section3{
+		display: table; 
+        height: 200px; 
+        border: 3px dashed #1c87c9;
+        text-align: center; 
+	}
+	#section3 p{
+		display: table-cell;
+       	vertical-align: middle;
+	}
+
+    </style>
+</head>
+<body>
+	<section id="section1">
+      <p> I'm centered with Flexbox!</p>
+    </section>
+
+	<section id="section2">
+	  <p> I'm centered with Flexbox!</p>
+	</section>
+
+	<section id="section3">
+	  <p> I'm centered with Flexbox!</p>
+	</section>
+
+
+</body>
+</html>

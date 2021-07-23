@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+  <img data-src="https://picsum.photos/1000/800/?random&1" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&2" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&3" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&4" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&5" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&6" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&7" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&8" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&9" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&11" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&12" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&13" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&14" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&15" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+  <img data-src="https://picsum.photos/1000/800/?random&16" class="lazyload" width="1000" height="800" alt="random dummy image" />
+  <hr/>
+
+<script>
+  window.addEventListener("scroll", function() { onScrollDiv() });
+  window.addEventListener("DOMContentLoaded", function() { onScrollDiv() });
+
+  function onScrollDiv() {
+    var images = document.querySelectorAll('.lazyload');
+    for (var i=0, nb=images.length ; i <nb ; i++) {
+      var img = images[i]
+      var rect = img.getBoundingClientRect();
+      var isVisible = ((rect.top - window.innerHeight) < 500 && (rect.bottom) > -50 ) ? true : false ;
+
+      if (isVisible) {
+        if (!img.src) {
+          img.src = img.dataset.src;
+        }
+      }
+    }
+  }
+
+</script>
+</body>
+</html>

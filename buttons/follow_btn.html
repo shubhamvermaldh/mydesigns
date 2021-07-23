@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Follow</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	<style>
+		* {
+		  margin: 0;
+		  box-sizing: border-box;
+		  padding: 0;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale;
+		}
+
+		h1, h2, h3, h4, h5, h6, a, p, span {
+		  padding-bottom: 0.714em !important;
+		  padding-top: 0.714em !important;
+		  text-transform: uppercase;
+		  letter-spacing: 0.1em;
+		  font-weight: 400;
+		  color: #f3f3f6;
+		  font-weight: bold;
+		  text-align: center;
+		}
+
+		footer {
+		  bottom: 0;
+		  right: 0;
+		  left: 0;
+		  margin: 0 auto;
+		  position: fixed;
+		  width: 100%;
+		  background: #e3dcd5;
+		  text-align: center;
+		}
+		footer .content {
+		  border-radius: 5px;
+		  display: -webkit-box;
+		  display: flex;
+		  -webkit-box-align: center;
+		          align-items: center;
+		  -webkit-box-pack: center;
+		          justify-content: center;
+		  -webkit-box-orient: horizontal;
+		  -webkit-box-direction: normal;
+		          flex-direction: row;
+		  flex-wrap: wrap;
+		  -webkit-box-pack: space-evenly;
+		          justify-content: space-evenly;
+		  height: 80px;
+		}
+		footer .content .bottom {
+		  padding: 0;
+		  margin: 0;
+		  top: 10%;
+		}
+		footer .content .bottom .beat {
+		  color: red;
+		  -webkit-animation: beat 0.3s infinite alternate;
+		          animation: beat 0.3s infinite alternate;
+		}
+		footer .content .top {
+		  font-size: 25px;
+		}
+		footer .content .top .fa-twitter:hover {
+		  -webkit-transition: 350ms ease-in-out;
+		  transition: 350ms ease-in-out;
+		  color: #55acee;
+		  -webkit-transform: scale(1.4);
+		          transform: scale(1.4);
+		}
+		footer .content .top .fa-youtube:hover {
+		  -webkit-transition: 350ms ease-in-out;
+		  transition: 350ms ease-in-out;
+		  color: #cd201f;
+		  -webkit-transform: scale(1.4);
+		          transform: scale(1.4);
+		}
+		footer .content .top .fa-instagram:hover {
+		  -webkit-transition: 350ms ease-in-out;
+		  transition: 350ms ease-in-out;
+		  color: #e4405f;
+		  -webkit-transform: scale(1.4);
+		          transform: scale(1.4);
+		}
+		footer .content .top .fa-codepen:hover {
+		  -webkit-transition: 350ms ease-in-out;
+		  transition: 350ms ease-in-out;
+		  color: #FFDD40;
+		  -webkit-transform: scale(1.4);
+		          transform: scale(1.4);
+		}
+		footer .content .top a {
+		  padding: 10px;
+		}
+		footer .content .top i {
+		  -webkit-transition: 500ms ease-in-out;
+		  transition: 500ms ease-in-out;
+		}
+
+		body {
+		  background: #e3dcd5;
+		  font-family: "Raleway", sans-serif;
+		  text-align: center;
+		}
+
+		.noselect {
+		  -webkit-user-select: none;
+		     -moz-user-select: none;
+		      -ms-user-select: none;
+		          user-select: none;
+		}
+
+		.artboard {
+		  display: -webkit-box;
+		  display: flex;
+		  -webkit-box-align: center;
+		          align-items: center;
+		  -webkit-box-pack: center;
+		          justify-content: center;
+		  -webkit-box-orient: horizontal;
+		  -webkit-box-direction: normal;
+		          flex-direction: row;
+		  flex-wrap: wrap;
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  -webkit-transform: translate(-50%, -50%);
+		          transform: translate(-50%, -50%);
+		}
+		.artboard:hover .button {
+		  -webkit-transform: rotate(-75deg);
+		          transform: rotate(-75deg);
+		}
+
+		.button, .links {
+		  display: inline-block;
+		  width: 200px;
+		  height: 66.6666666667px;
+		  background: #6cb4b8;
+		}
+		.button i, .button a, .links i, .links a {
+		  position: absolute;
+		  left: 50%;
+		  top: 50%;
+		  -webkit-transform: translate(-50%, -50%);
+		          transform: translate(-50%, -50%);
+		  color: white;
+		}
+		.button i, .links i {
+		  font-size: 25px;
+		}
+
+		.button {
+		  z-index: 11;
+		  -webkit-transition: 950ms cubic-bezier(0.89, 0.03, 0.06, 1.5);
+		  transition: 950ms cubic-bezier(0.89, 0.03, 0.06, 1.5);
+		  -webkit-transform-origin: top left;
+		          transform-origin: top left;
+		}
+
+		.links {
+		  position: absolute;
+		  z-index: 9;
+		  background: #da7015;
+		}
+		.links a {
+		  text-decoration: none;
+		}
+
+		@-webkit-keyframes beat {
+		  to {
+		    -webkit-transform: scale(1.4);
+		            transform: scale(1.4);
+		  }
+		}
+
+		@keyframes beat {
+		  to {
+		    -webkit-transform: scale(1.4);
+		            transform: scale(1.4);
+		  }
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="artboard">
+	  <div class="button" onclick="onclick"><i class="fab fa-twitter"></i> </div>
+	  <div class="links">     <a target="_blank" href="https://twitter.com/@akshaycodes/">@akshaycodes</a></div>
+	</div>
+	<footer>
+	  <div class="content">
+	    <div class="top"><a target="_blank" href="https://www.instagram.com/akshaycodes/?hl=en"><i class="fab fa-instagram"></i></a><a target="_blank" href="https://twitter.com/akshaycodes/"><i class="fab fa-twitter"></i></a><a target="_blank" href="http://akshaycodes.com/youtube"><i class="fab fa-youtube"></i></a><a target="_blank" href="https://codepen.io/akshaycodes/"><i class="fab fa-codepen"></i></a></div>
+	    <div class="bottom"><a>made with <i class="fas fa-heart beat"></i> by <a target="_blank" href="https://codepen.io/akshaycodes/">Akshaycodes</a></a></div>
+	  </div>
+	</footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+		  --h: 19em;
+		  display: grid;
+		  grid-template-columns: repeat(var(--n, 7), var(--w, 13em));
+		  grid-gap: 1em;
+		  place-content: center;
+		  margin: 0;
+		  min-height: 100vh;
+		  background: #333;
+		}
+		@media (max-width: 99em) {
+		  body {
+		    --n: 6 ;
+		  }
+		}
+		@media (max-width: 85em) {
+		  body {
+		    --n: 5 ;
+		  }
+		}
+		@media (max-width: 71em) {
+		  body {
+		    --n: 4 ;
+		  }
+		}
+		@media (max-width: 57em) {
+		  body {
+		    --n: 3 ;
+		  }
+		}
+		@media (max-width: 43em) {
+		  body {
+		    --n: 2 ;
+		  }
+		}
+		@media (max-width: 29em) {
+		  body {
+		    --n: 1 ;
+		  }
+		}
+		@media (max-width: 15em) {
+		  body {
+		    --w: 100%;
+		    --h: 146.1538461538vw;
+		  }
+		}
+
+		.card {
+		  overflow: hidden;
+		  position: relative;
+		  height: var(--h);
+		  border-radius: 7px;
+		  box-shadow: 2px 2px 17px #000;
+		  background: linear-gradient(90deg, #632C65, #E2A9E5);
+		}
+		.card:before, .card:after {
+		  --p: 0;
+		  --s: calc(1 - 2*var(--p));
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  -webkit-mask: var(--m);
+		  mask: var(--m);
+		  content: "";
+		}
+		.card:after {
+		  --p: 1 ;
+		}
+		.card:nth-child(1):before, .card:nth-child(1):after {
+		  background: linear-gradient(calc(var(--s)*45deg), transparent calc(50% - 1px), #4B384C 0, #4B384C calc(50% + 1px), transparent 0) 0 0/ 19px 19px;
+		  --m: linear-gradient(red 50%, transparent 50%)
+		  				0 calc(var(--p)*19px)/ 100% 38px;
+		}
+		.card:nth-child(2):before, .card:nth-child(2):after {
+		  --c0: hsla(0, 0%, 0%, var(--p));
+		  --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+		  background: repeating-linear-gradient(calc(var(--s)*45deg), #4B384C 0, #4B384C 3px, transparent 0, transparent 13px);
+		  --m: repeating-radial-gradient(circle,
+		  					var(--c0) 0, var(--c0) 2em,
+		  					var(--c1) 0, var(--c1) 4em)
+		  ;
+		}
+		.card:nth-child(3):before, .card:nth-child(3):after {
+		  background: repeating-radial-gradient(circle, #4B384C 0, #4B384C 1px, transparent 2px, transparent 7px, #4B384C 8px) calc(var(--p)*32px) 0/ 64px 64px;
+		  --m: linear-gradient(red 50%, transparent 0)
+		  		0 calc(var(--p)*32px)/ 100% 64px
+		  ;
+		}
+		.card:nth-child(4):before, .card:nth-child(4):after {
+		  background: linear-gradient(calc(var(--s)*45deg), transparent calc(50% - 1px), #4B384C 0, #4B384C calc(50% + 1px), transparent 0) 0 0/ 0.5em 0.5em;
+		  --m:
+		  	linear-gradient(red 50%, transparent 0)
+		  			0 0/ 4em 4em,
+		  	linear-gradient(90deg, red 50%, transparent 0)
+		  	calc(var(--p)*2em) 0/ 4em 4em;
+		  -webkit-mask-composite: xor;
+		  mask-composite: exclude;
+		}
+		.card:nth-child(5):before, .card:nth-child(5):after {
+		  background: radial-gradient(circle at calc(var(--p)*100%) 50%, transparent calc(0.5em - 1px), #4B384C 0, #4B384C calc(0.5em + 1px), transparent 0) 0 0/ 1em 1em;
+		  --m: linear-gradient(red 50%, transparent 50%)
+		  				0 calc(var(--p)*1em)/ 100% 2em;
+		}
+		.card:nth-child(6):before, .card:nth-child(6):after {
+		  --c0: hsla(0, 0%, 0%, var(--p));
+		  --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+		  background: linear-gradient(calc(var(--s)*45deg), transparent calc(50% - 1px), #4B384C 0, #4B384C calc(50% + 1px), transparent 0) 50%/ 0.75em 0.75em;
+		  --m: repeating-conic-gradient(var(--c0) 0%, var(--c0) 45deg, var(--c1) 0%, var(--c1) 90deg)
+		  ;
+		}
+		.card:nth-child(7):before, .card:nth-child(7):after {
+		  --c0: hsla(0, 0%, 0%, var(--p));
+		  --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+		  background: linear-gradient(calc(var(--s)*45deg), transparent calc(50% - 1px), #4B384C 0, #4B384C calc(50% + 1px), transparent 0) 50%/ 1em 1em;
+		  --m: repeating-conic-gradient(var(--c0) 0%, var(--c0) 22.5deg, var(--c1) 0%, var(--c1) 45deg)
+		  ;
+		}
+		.card:nth-child(8):before, .card:nth-child(8):after {
+		  --c0: hsla(0, 0%, 0%, var(--p));
+		  --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+		  background: linear-gradient(calc(var(--p)*90deg), #4B384C 1px, transparent 0, transparent calc(100% - 1px), #4B384C 0) 50% 50%/ 0.35355em 0.35355em;
+		  --m:
+		  		repeating-linear-gradient(45deg,
+		  				red 0, red 2.5em,
+		  				transparent 0, transparent 5em),
+		  		repeating-linear-gradient(-45deg,
+		  				var(--c0) 0, var(--c0) 2.5em,
+		  				var(--c1) 0, var(--c1) 5em)
+		  ;
+		}
+		.card:nth-child(9):before, .card:nth-child(9):after {
+		  --c0: hsla(0, 0%, 0%, var(--p));
+		  --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+		  background: repeating-conic-gradient(from calc(var(--p)*6deg), #4B384C 0%, #4B384C 2deg, transparent 0%, transparent 12deg);
+		  --m: repeating-radial-gradient(circle,
+		  					var(--c0) 0, var(--c0) 2em,
+		  					var(--c1) 0, var(--c1) 4em)
+		  ;
+		}
+		.card:nth-child(10):before, .card:nth-child(10):after {
+		  --c0: hsla(0, 0%, 0%, var(--p));
+		  --c1: hsla(0, 0%, 0%, calc(1 - var(--p)));
+		  background: linear-gradient(calc(var(--p)*90deg), #4B384C 1px, transparent 0, transparent calc(100% - 1px), #4B384C 0) 50% 50%/ 0.28284em 0.28284em;
+		  --m:
+		  	repeating-linear-gradient(45deg,
+		  			red 0, red 2em,
+		  			transparent 0, transparent 4em),
+		  	repeating-linear-gradient(-45deg,
+		  			var(--c0) 0, var(--c0) 2em,
+		  			var(--c1) 0, var(--c1) 4em);
+		  -webkit-mask-composite: xor;
+		  mask-composite: exclude;
+		}
+
+	</style>
+</head>
+<body>
+	<div class='card'></div>
+	<div class='card'></div>
+	<div class='card'></div>
+	<div class='card'></div>
+	<div class='card'></div>
+	<div class='card'></div>
+	<div class='card'></div>
+	<div class='card'></div>
+	<div class='card'></div>
+	<div class='card'></div>
+</body>
+</html>
